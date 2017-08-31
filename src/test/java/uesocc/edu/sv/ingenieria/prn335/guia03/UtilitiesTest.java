@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
 
 /**
  *
- * @author juanca
+ * @author jcsantos
  */
 @RunWith(Arquillian.class)
 public class UtilitiesTest {
@@ -30,29 +30,103 @@ public class UtilitiesTest {
     private Utilities servicio;
 
     @Test
-    public void probarMetodogetResume() {
+    public void probarMetodogetResume() { //prueba 1 getResume
         String fraseEsperada1 = "Bienvenidos a la mat";
         String fraseCompleta="Bienvenidos a la materia de Programación 3 Ciclo II 2017.";
         String resultado = servicio.getResume(fraseCompleta);
         Assert.assertEquals(fraseEsperada1, resultado);
+        System.out.println(" ");
+        System.out.println("Resultado esperado: "+fraseEsperada1+"\n");
+        System.out.println("Resultado del metodo: "+resultado+"\n");
+        
+        
     }
+    @Test
+    public void probarMetodogetResumeb() {//prueba 2 getResume
+        String fraseEsperada1 = "Hola Mundo!";
+        String fraseCompleta="Hola Mundo!";
+        String resultado = servicio.getResume(fraseCompleta);
+        Assert.assertEquals(fraseEsperada1, resultado);
+         System.out.println(" ");
+        System.out.println("Resultado esperado: "+fraseEsperada1+"\n");
+        System.out.println("Resultado del metodo: "+resultado+"\n");
+          
+    }
+    @Test
+    public void probarMetodogetResumec() {//prueba 3 getResume
+        String fraseEsperada1 = null;
+        String fraseCompleta=null;
+        String resultado = servicio.getResume(fraseCompleta);
+        Assert.assertEquals(fraseEsperada1, resultado);
+         System.out.println(" ");
+        System.out.println("Resultado esperado: "+fraseEsperada1+"\n");
+        System.out.println("Resultado del metodo: "+resultado+"\n");
+    }
+
     
     @Test
-    public void probarMetodoCapitalizar() {
+    public void probarMetodoCapitalizar() { //prueba 1 capitalizar
         String fraseEsperada2="Pruebas De Unidad Con Junit & Arquillian";
-        String texto="prueBas de UNIDAD con JUnit & arQuillian";
+        String texto="prueBas  de  UNIDAD con JUnit & arQuillian";
         String resultado = servicio.capitalizar(texto);
         Assert.assertEquals(fraseEsperada2, resultado);
+         System.out.println(" ");
+        System.out.println("Resultado esperado: "+fraseEsperada2+"\n");
+        System.out.println("Resultado del metodo: "+resultado+"\n");
+    }
+    @Test
+    public void probarMetodoCapitalizarb() {//prueba 2 capitalizar
+        String fraseEsperada2="";
+        String texto="";
+        String resultado = servicio.capitalizar(texto);
+        Assert.assertEquals(fraseEsperada2, resultado);
+        System.out.println(" ");
+        System.out.println("Resultado esperado: "+fraseEsperada2+"\n");
+        System.out.println("Resultado del metodo: "+resultado+"\n");
     }
     
     @Test
-    public void probarMetodoContarCoincidencias() {
-        int fraseEsperada3=1;
+    public void probarMetodoCapitalizarc() {//prueba 3 capitalizar
+        String fraseEsperada2=null;
+        String texto=null;
+        String resultado = servicio.capitalizar(texto);
+        Assert.assertEquals(fraseEsperada2, resultado);
+        System.out.println(" ");
+        System.out.println("Resultado esperado: "+fraseEsperada2+"\n");
+        System.out.println("Resultado del metodo: "+resultado+"\n");
+    }
+    
+    @Test
+    public void probarMetodoContarCoincidencias() {//prueba 1 contar
+        int coincidenciasEsperadas3=1;
         String frase="2017";
         String Cadena = "Bienvenidos a la materia de Programación 3 Ciclo II 2017.";
         int resultado = servicio.contarCoincidencias(Cadena, frase);
-        Assert.assertEquals(fraseEsperada3, resultado);
+        Assert.assertEquals(coincidenciasEsperadas3, resultado);
+        System.out.println(" ");
+        System.out.println("Resultado esperado: "+coincidenciasEsperadas3+"\n");
+        System.out.println("Resultado del metodo: "+resultado+"\n");
     }
-    
-
+    @Test
+    public void probarMetodoContarCoincidenciasb() {//prueba 2 contar
+        int coincidenciasEsperadas3=2;
+        String frase="MA";
+        String Cadena = "Bienvenidos a la materia de Programación 3 Ciclo II 2017.";
+        int resultado = servicio.contarCoincidencias(Cadena, frase);
+        Assert.assertEquals(coincidenciasEsperadas3, resultado);
+        System.out.println(" ");
+        System.out.println("Resultado esperado: "+coincidenciasEsperadas3+"\n");
+        System.out.println("Resultado del metodo: "+resultado+"\n");
+    }
+    @Test
+    public void probarMetodoContarCoincidenciasc() {//prueba 3 contar
+        int coincidenciasEsperadas3=0;
+        String frase="bienvenido";
+        String Cadena =null;
+        int resultado = servicio.contarCoincidencias(Cadena, frase);
+        Assert.assertEquals(coincidenciasEsperadas3, resultado);
+        System.out.println(" ");
+        System.out.println("Resultado esperado: "+coincidenciasEsperadas3+"\n");
+        System.out.println("Resultado del metodo: "+resultado+"\n");
+    }
 }
